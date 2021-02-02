@@ -1,0 +1,58 @@
+div#content div.leaderboard {
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	   -moz-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+div#content div.leaderboard div.header {
+	background-color: #16a085;
+	color: #fff;
+	padding: 10px;
+}
+
+div#content div.leaderboard div.body {
+	background-color: #fff;
+	position: relative;
+}
+
+div#content div.leaderboard div.body thead {
+	background: #fff;
+	top: 0;
+}
+
+div#content div.leaderboard div.body th.rank,
+div#content div.leaderboard div.body td.rank {
+	border-right: 1px solid #ddd;
+	text-align: center;
+	width: 40px;
+}
+
+div#content div.leaderboard div.body th.userName,
+div#content div.leaderboard div.body td.userName {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+div#content div.leaderboard div.body th.ACProblemNum,
+div#content div.leaderboard div.body td.ACProblemNum {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+div#content div.leaderboard div.body th.submissionTimes,
+div#content div.leaderboard div.body td.submissionTimes {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+div#content div.leaderboard div.body th.ACSubmissionTimes,
+div#content div.leaderboard div.body td.ACSubmissionTimes {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+div#content div.leaderboard div.body th.ACRate,
+div#content div.leaderboard div.body td.ACRate {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}

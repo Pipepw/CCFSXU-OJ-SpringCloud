@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.verwandlung.voj.web.mapper.ProblemDifficultyMapper">
+    <!-- ResultMap-->
+    <resultMap id="ProblemDifficultyResultMap"
+        type="org.verwandlung.voj.web.model.ProblemDifficulty">
+        <id property="problemDifficultyId" column="problem_difficulty_id"/>
+        <result property="problemDifficultySlug" column="problem_difficulty_slug"/>
+        <result property="problemDifficultyName" column="problem_difficulty_name"/>
+    </resultMap>
+    <resultMap id="ProblemDifficultyRelationshipResultMap"
+        type="org.verwandlung.voj.web.model.ProblemDifficultyRelationship">
+        <id property="problemDifficultyId" column="problem_difficulty_id"/>
+        <id property="problemId" column="problem_id"/>
+    </resultMap>
+
+    <select id="getProblemDifficultyRelationUsingProblemId"
+        useCache="true" resultType="java.lang.String">
+        SELECT problem_difficulty_name
+        FROM voj_problem_difficulty
+        NATURAL JOIN voj_problem_difficulty_relationships
+        WHERE problem_id = #{problemId}
+    </select>
+    <insert id="createProblemDifficultyRelationship"
+        parameterType="map"
+        flushCache="true">
+        INSERT INTO voj_problem_difficulty_relationships (problem_id, problem_difficulty_id)
+        VALUES (#{problemId}, #{problemDifficultyId})
+</insert>
+
+</mapper>
