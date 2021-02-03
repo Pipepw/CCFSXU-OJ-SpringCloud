@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ccfsxu-oj-provider-dept-8001</module>
+        <module>ccfsxu-oj-eureka-7001</module>
     </modules>
 
     <!--    打包方式，pom-->

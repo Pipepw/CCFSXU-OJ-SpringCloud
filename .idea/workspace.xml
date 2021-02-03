@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb19322f-192d-4b5e-994a-b270e983c14e" name="Default Changelist" comment="" />
+    <list default="true" id="fb19322f-192d-4b5e-994a-b270e983c14e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/ccfsxu-oj-eureka-7001.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/src/main/java/org/verwandlung/voj/web/EurekaServer7001_App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="application" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1nvRyxEv8JW8f2iI5J1zRhrJBHe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -16,19 +43,47 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\文档\工作\CCFSXU-OJ-SpringCloud\ccfsxu-oj-provider-dept-8001\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaServer7001_App">
+    <configuration name="EurekaServer7001_App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ccfsxu-oj-eureka-7001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.verwandlung.voj.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.verwandlung.voj.web.EurekaServer7001_App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ccfsxu-oj-provider-dept-8001" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.verwandlung.voj.web.WebApplication" />
@@ -36,6 +91,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.EurekaServer7001_App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.21736158" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="UTF-8" />
@@ -50,57 +133,64 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612268835947</updated>
-      <workItem from="1612268840258" duration="7563000" />
+      <workItem from="1612268840258" duration="11785000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="361" y="90" key="#Project_Structure" timestamp="1612272847714">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="90" key="#Project_Structure/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612272847714" />
-    <state width="1492" height="495" key="GridCell.Tab.0.bottom" timestamp="1612277276824">
+    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612339820874">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276824" />
-    <state width="1492" height="495" key="GridCell.Tab.0.center" timestamp="1612277276822">
+    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612339820874" />
+    <state width="1144" height="167" key="GridCell.Tab.0.bottom" timestamp="1612341345514">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.0.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276822" />
-    <state width="1492" height="495" key="GridCell.Tab.0.left" timestamp="1612277276816">
+    <state width="1144" height="167" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
+    <state width="1144" height="167" key="GridCell.Tab.0.center" timestamp="1612341345514">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.0.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276816" />
-    <state width="1492" height="495" key="GridCell.Tab.0.right" timestamp="1612277276822">
+    <state width="1144" height="167" key="GridCell.Tab.0.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
+    <state width="1144" height="167" key="GridCell.Tab.0.left" timestamp="1612341345514">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.0.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276822" />
-    <state width="1492" height="495" key="GridCell.Tab.1.bottom" timestamp="1612277276829">
+    <state width="1144" height="167" key="GridCell.Tab.0.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
+    <state width="1144" height="167" key="GridCell.Tab.0.right" timestamp="1612341345514">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.1.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276829" />
-    <state width="1492" height="495" key="GridCell.Tab.1.center" timestamp="1612277276826">
+    <state width="1144" height="167" key="GridCell.Tab.0.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
+    <state width="1144" height="167" key="GridCell.Tab.1.bottom" timestamp="1612341345515">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.1.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276826" />
-    <state width="1492" height="495" key="GridCell.Tab.1.left" timestamp="1612277276825">
+    <state width="1144" height="167" key="GridCell.Tab.1.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
+    <state width="1144" height="167" key="GridCell.Tab.1.center" timestamp="1612341345515">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.1.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276825" />
-    <state width="1492" height="495" key="GridCell.Tab.1.right" timestamp="1612277276827">
+    <state width="1144" height="167" key="GridCell.Tab.1.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
+    <state width="1144" height="167" key="GridCell.Tab.1.left" timestamp="1612341345515">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="495" key="GridCell.Tab.1.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277276827" />
-    <state x="249" y="6" key="SettingsEditor" timestamp="1612277022811">
+    <state width="1144" height="167" key="GridCell.Tab.1.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
+    <state width="1144" height="167" key="GridCell.Tab.1.right" timestamp="1612341345515">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="249" y="6" key="SettingsEditor/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612277022811" />
-    <state x="178" y="0" key="new project wizard" timestamp="1612269088903">
+    <state width="1144" height="167" key="GridCell.Tab.1.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
+    <state x="249" y="6" key="SettingsEditor" timestamp="1612339207716">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612269088903" />
+    <state x="249" y="6" key="SettingsEditor/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612339207716" />
+    <state x="178" y="0" key="new project wizard" timestamp="1612338461480">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612338461480" />
   </component>
 </project>

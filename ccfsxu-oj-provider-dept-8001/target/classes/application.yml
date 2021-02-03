@@ -1,0 +1,92 @@
+server:
+  port: 8001
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+      # 将该service注册到集群eureka中
+#      defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+  instance:
+    instance-id: ccusxu-oj-dept-8001   # 在eureka中显示对应的服务名字
+    prefer-ip-address: true     #在eureka中下边的访问路径可以显示IP地址
+
+info: # 在eureka中可以点击info链接，显示有值。链接后的内容就是在这里配置的
+  app.name: CCFSXU-OJ
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+spring:
+  application:
+    name: ccusxu-oj-dept
+  datasource:
+    # Database Configuration
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/voj?characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 这4个参数key里不带druid也可以，即可以还用上面的这个4个参数
+      # 初始化时建立物理连接的个数
+      initial-size: 5
+      # 最大连接池数量
+      max-active: 30
+      # 最小连接池数量
+      min-idle: 3
+      # 获取连接时最大等待时间，单位毫秒
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 连接保持空闲而不被驱逐的最小时间
+      min-evictable-idle-time-millis: 300000
+      remove-abandoned: true
+      remove-abandoned-timeout-millis: 1800
+  # Mail Service Configuration
+  mail:
+    host: smtp.126.com
+    username: pipepw@126.com
+    password: NMICFPEKMEXRHLEJ
+  # Message Service Configuration
+  activemq:
+    broker-url: tcp://39.107.240.104:61616
+  # AOP
+  aop:
+    auto: true
+# Redis
+redis:
+  #Redis服务器地址
+  host: localhost
+  #Redis服务器连接端口
+  port: 6379
+  #连接超时时间（毫秒）
+  timeout: 10
+  #Redis服务器连接密码（默认为空）
+  password: 12345
+  #最大活动对象数
+  poolMaxTotal: 1000
+  #连接池中的最大空闲连接
+  poolMaxIdle: 500
+  #连接池最大阻塞等待时间（使用负值表示没有限制）
+  poolMaxWait: 500
+
+mail:
+  senderMail: pipepw@126.com
+  senderName: SXU-CCF Online Judge
+url:
+  base: http://localhost:8080
+# Version
+build:
+  version: 226131d
+product:
+  version: 0.2.0
+# Save path of avatar, real path
+cbs:
+  imagesPath: C:/Users/Pipe/Tomcat/images
+
+# Mybatis
+#配置实体类位置
+#mybatis.type-aliases-package=org.verwandlung.voj.web.model
+#配置xml位置
+mybatis:
+  mapper-locations: classpath:mappers/*.xml

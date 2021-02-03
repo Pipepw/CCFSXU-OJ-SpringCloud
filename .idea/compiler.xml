@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ccfsxu-oj-eureka-7001" />
         <module name="ccfsxu-oj-provider-dept-8001" />
       </profile>
     </annotationProcessing>
