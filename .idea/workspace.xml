@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb19322f-192d-4b5e-994a-b270e983c14e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/ccfsxu-oj-eureka-7001.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/src/main/java/org/verwandlung/voj/web/EurekaServer7001_App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-eureka-7001/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/ccfsxu-oj-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/ccfsxu-oj-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +105,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -133,7 +127,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612268835947</updated>
-      <workItem from="1612268840258" duration="11785000" />
+      <workItem from="1612268840258" duration="13028000" />
     </task>
     <servers />
   </component>
@@ -188,9 +182,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="249" y="6" key="SettingsEditor/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612339207716" />
-    <state x="178" y="0" key="new project wizard" timestamp="1612338461480">
+    <state x="178" y="0" key="new project wizard" timestamp="1612343620399">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612338461480" />
+    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612343620399" />
   </component>
 </project>
