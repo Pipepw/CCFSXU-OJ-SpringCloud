@@ -8,7 +8,7 @@ eureka:
       # 将该service注册到集群eureka中
 #      defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
   instance:
-    instance-id: ccusxu-oj-dept-8001   # 在eureka中显示对应的服务名字
+    instance-id: ccusxu-oj-8001   # 在eureka中显示对应的服务名字
     prefer-ip-address: true     #在eureka中下边的访问路径可以显示IP地址
 
 info: # 在eureka中可以点击info链接，显示有值。链接后的内容就是在这里配置的
@@ -18,7 +18,7 @@ info: # 在eureka中可以点击info链接，显示有值。链接后的内容�
 
 spring:
   application:
-    name: ccusxu-oj-dept
+    name: ccusxu-oj
   datasource:
     # Database Configuration
     driver-class-name: com.mysql.cj.jdbc.Driver

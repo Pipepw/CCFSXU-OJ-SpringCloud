@@ -8,7 +8,7 @@
     <artifactId>CCFSXU-OJ-SpringCloud</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>ccfsxu-oj-provider-dept-8001</module>
+        <module>ccfsxu-oj-provider-8001</module>
         <module>ccfsxu-oj-eureka-7001</module>
         <module>ccfsxu-oj-api</module>
     </modules>
