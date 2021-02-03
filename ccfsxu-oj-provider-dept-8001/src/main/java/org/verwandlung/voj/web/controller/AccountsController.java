@@ -52,26 +52,17 @@ import javax.servlet.http.HttpSession;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.util.ClassUtils;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
-import org.springframework.web.servlet.view.RedirectView;
 import org.verwandlung.voj.web.exception.ResourceNotFoundException;
 import org.verwandlung.voj.web.model.Language;
 import org.verwandlung.voj.web.model.User;
-import org.verwandlung.voj.web.service.LanguageService;
-import org.verwandlung.voj.web.service.OptionService;
-import org.verwandlung.voj.web.service.SubmissionService;
-import org.verwandlung.voj.web.service.UserService;
+import org.verwandlung.voj.web.service.*;
 import org.verwandlung.voj.web.util.*;
 
 /**
@@ -615,5 +606,5 @@ public class AccountsController {
 	/**
 	 * 日志记录器.
 	 */
-	private static final Logger LOGGER = LogManager.getLogger(AccountsController.class);
+	private static final Logger LOGGER = LogManager.getLogger(AccountsClientService.class);
 }

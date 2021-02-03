@@ -54,9 +54,7 @@ import io.swagger.annotations.ApiParam;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import org.verwandlung.voj.web.exception.ResourceNotFoundException;
 import org.verwandlung.voj.web.model.*;
@@ -332,5 +330,5 @@ public class ProblemsController {
 	/**
 	 * 日志记录器.
 	 */
-	private static final Logger LOGGER = LogManager.getLogger(ProblemsController.class);
+	private static final Logger LOGGER = LogManager.getLogger(org.verwandlung.voj.web.service.ProblemsClientService.class);
 }

@@ -52,7 +52,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.MissingServletRequestParameterException;
-import org.springframework.web.servlet.ModelAndView;
 
 import org.verwandlung.voj.web.exception.ResourceNotFoundException;
 import org.verwandlung.voj.web.util.ResponseData;
@@ -141,5 +140,5 @@ public class ExceptionHandlingController {
 	/**
 	 * 日志记录器.
 	 */
-	private static final Logger LOGGER = LogManager.getLogger(ExceptionHandlingController.class);
+	private static final Logger LOGGER = LogManager.getLogger(org.verwandlung.voj.web.controller.ExceptionHandlingController.class);
 }

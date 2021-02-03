@@ -2,11 +2,126 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb19322f-192d-4b5e-994a-b270e983c14e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/ccfsxu-oj-api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/AccountsClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/AdministrationClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/ContestsClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/DefaultClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/DiscussionClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/ProblemsClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/SubmissionClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/ccfsxu-oj-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/ccfsxu-oj-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/AdministrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/AdministrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/ContestsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/DiscussionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/DiscussionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/ExceptionHandlingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/ExceptionHandlingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/ProblemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/ProblemsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/SubmissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/controller/SubmissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/BulletinBoardMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/BulletinBoardMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/Checkpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/Checkpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/Contest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/Contest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ContestContestant.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ContestContestant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ContestSubmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ContestSubmission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/DiscussionReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/DiscussionReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/DiscussionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/DiscussionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/DiscussionTopic.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/DiscussionTopic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/EmailValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/EmailValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/JudgeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/JudgeResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/Problem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ProblemCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ProblemCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ProblemCategoryRelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ProblemCategoryRelationship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ProblemDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ProblemDifficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ProblemDifficultyRelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ProblemDifficultyRelationship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ProblemTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ProblemTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/ProblemTagRelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/ProblemTagRelationship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/Submission.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/Submission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/UserGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/UserGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/model/UserMeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/model/UserMeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/service/FpsProblemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/service/FpsProblemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/service/ProblemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/service/ProblemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/util/ResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/util/ResponseData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/java/org/verwandlung/voj/web/util/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/util/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/WebApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/AccountsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/AccountsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/AdministrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/AdministrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/ContestsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/DefaultController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/DiscussionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/ExceptionHandlingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/ProblemsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/controller/SubmissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/exception/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/BulletinBoardMessageMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/CheckpointMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/ContestContestantMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/ContestMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/DiscussionReplyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/DiscussionThreadMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/DiscussionTopicMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/JudgeResultMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/ProblemCategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/ProblemDifficultyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/mapper/ProblemTagMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/messenger/ApplicationEventListener$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/messenger/ApplicationEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/messenger/KeepAliveEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/messenger/MessageReceiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/messenger/SubmissionEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/BulletinBoardMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Checkpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Contest$CONTEST_STATUS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Contest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ContestContestant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ContestSubmission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/DiscussionReply.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/DiscussionThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/DiscussionTopic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/EmailValidation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/JudgeResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Language.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Option.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Problem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ProblemCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ProblemCategoryRelationship.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ProblemDifficulty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ProblemDifficultyRelationship.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ProblemTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/ProblemTagRelationship.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/Submission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/UserGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/model/UserMeta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/BulletinBoardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/ContestService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/ContestService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/DiscussionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/FpsProblemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/ProblemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/RedisCacheService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/service/testCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/CsrfProtector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/DigestUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/HtmlTextFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/HttpRequestParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/HttpSessionParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/LocaleUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/MyLocaleResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/ResponseData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/ResultCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/SerializeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/SessionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/SlugifyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/target/classes/org/verwandlung/voj/web/util/annotation/NeedCacheAop.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +161,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccfsxu-oj-provider-dept-8001/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -54,6 +169,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\文档\工作\CCFSXU-OJ-SpringCloud\ccfsxu-oj-api\src\main\java\org\verwandlung\voj\web" />
+      <recent name="E:\文档\工作\CCFSXU-OJ-SpringCloud\ccfsxu-oj-api\src\main\java" />
       <recent name="E:\文档\工作\CCFSXU-OJ-SpringCloud\ccfsxu-oj-provider-dept-8001\src\main\resources" />
     </key>
   </component>
@@ -127,7 +244,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612268835947</updated>
-      <workItem from="1612268840258" duration="13028000" />
+      <workItem from="1612268840258" duration="16599000" />
+      <workItem from="1612351678805" duration="36000" />
+      <workItem from="1612351772657" duration="3555000" />
+      <workItem from="1612355397847" duration="97000" />
+      <workItem from="1612355539870" duration="558000" />
     </task>
     <servers />
   </component>
@@ -142,49 +263,69 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="90" key="#Project_Structure/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612272847714" />
-    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612339820874">
+    <state x="499" y="207" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1612349209363">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612339820874" />
-    <state width="1144" height="167" key="GridCell.Tab.0.bottom" timestamp="1612341345514">
+    <state x="499" y="207" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612349209363" />
+    <state x="516" y="348" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1612355116262">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
-    <state width="1144" height="167" key="GridCell.Tab.0.center" timestamp="1612341345514">
+    <state x="516" y="348" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612355116262" />
+    <state x="477" y="300" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1612349211061">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.0.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
-    <state width="1144" height="167" key="GridCell.Tab.0.left" timestamp="1612341345514">
+    <state x="477" y="300" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612349211061" />
+    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612353259729">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.0.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
-    <state width="1144" height="167" key="GridCell.Tab.0.right" timestamp="1612341345514">
+    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612353259729" />
+    <state width="1145" height="280" key="GridCell.Tab.0.bottom" timestamp="1612356132794">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.0.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345514" />
-    <state width="1144" height="167" key="GridCell.Tab.1.bottom" timestamp="1612341345515">
+    <state width="1145" height="280" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132794" />
+    <state width="1145" height="280" key="GridCell.Tab.0.center" timestamp="1612356132794">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.1.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
-    <state width="1144" height="167" key="GridCell.Tab.1.center" timestamp="1612341345515">
+    <state width="1145" height="280" key="GridCell.Tab.0.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132794" />
+    <state width="1145" height="280" key="GridCell.Tab.0.left" timestamp="1612356132794">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.1.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
-    <state width="1144" height="167" key="GridCell.Tab.1.left" timestamp="1612341345515">
+    <state width="1145" height="280" key="GridCell.Tab.0.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132794" />
+    <state width="1145" height="280" key="GridCell.Tab.0.right" timestamp="1612356132794">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.1.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
-    <state width="1144" height="167" key="GridCell.Tab.1.right" timestamp="1612341345515">
+    <state width="1145" height="280" key="GridCell.Tab.0.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132794" />
+    <state width="1145" height="280" key="GridCell.Tab.1.bottom" timestamp="1612356132795">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1144" height="167" key="GridCell.Tab.1.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612341345515" />
+    <state width="1145" height="280" key="GridCell.Tab.1.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132795" />
+    <state width="1145" height="280" key="GridCell.Tab.1.center" timestamp="1612356132795">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1145" height="280" key="GridCell.Tab.1.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132795" />
+    <state width="1145" height="280" key="GridCell.Tab.1.left" timestamp="1612356132794">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1145" height="280" key="GridCell.Tab.1.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132794" />
+    <state width="1145" height="280" key="GridCell.Tab.1.right" timestamp="1612356132795">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1145" height="280" key="GridCell.Tab.1.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612356132795" />
     <state x="249" y="6" key="SettingsEditor" timestamp="1612339207716">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="249" y="6" key="SettingsEditor/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612339207716" />
-    <state x="178" y="0" key="new project wizard" timestamp="1612343620399">
+    <state x="430" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1612355671524">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612343620399" />
+    <state x="430" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612355671524" />
+    <state x="178" y="0" key="new project wizard" timestamp="1612354063745">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612354063745" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1612353149779">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612353149779" />
   </component>
 </project>

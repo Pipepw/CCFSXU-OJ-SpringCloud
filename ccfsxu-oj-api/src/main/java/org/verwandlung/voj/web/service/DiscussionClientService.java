@@ -37,41 +37,26 @@
  *                          HERE BE BUDDHA
  *
  */
-package org.verwandlung.voj.web.controller;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+package org.verwandlung.voj.web.service;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
-import org.verwandlung.voj.web.exception.ResourceNotFoundException;
-import org.verwandlung.voj.web.model.*;
-import org.verwandlung.voj.web.service.DiscussionService;
-import org.verwandlung.voj.web.service.ProblemService;
-import org.verwandlung.voj.web.util.CsrfProtector;
-import org.verwandlung.voj.web.util.HttpRequestParser;
-import org.verwandlung.voj.web.util.HttpSessionParser;
 import org.verwandlung.voj.web.util.ResponseData;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 处理讨论的相关请求.
  *
  */
+@FeignClient(value = "CCUSXU-OJ-DEPT")
 @Api(tags = "处理讨论的相关请求")
-@RestController
 @RequestMapping(value="/discussion")
-public class DiscussionController {
+public interface DiscussionClientService {
 	/**
 	 * 显示讨论列表页面.
 	 * @param discussionTopicSlug - 讨论话题的唯一英文缩写
@@ -87,24 +72,7 @@ public class DiscussionController {
 			@RequestParam(value="topicSlug", required=false, defaultValue="") String discussionTopicSlug,
 			@ApiParam(value="试题的唯一标识符", name="problemId", required=false, defaultValue="-1")
 			@RequestParam(value="problemId", required=false, defaultValue="-1") long problemId,
-			HttpServletRequest request, HttpServletResponse response) {
-		List<DiscussionThread> discussionThreads = null;
-		if ( problemId != -1 ) {
-			discussionThreads = discussionService.getDiscussionThreadsOfProblem(
-					problemId, 0, NUMBER_OF_THREADS_PER_REQUEST);
-		} else {
-			discussionThreads = discussionService.getDiscussionThreadsOfTopic(
-					discussionTopicSlug, 0, NUMBER_OF_THREADS_PER_REQUEST);
-		}
-
-//		ModelAndView view = new ModelAndView("discussion/threads");
-		Map<String, Object> result = new HashMap<>();
-		result.put("selectedTopicSlug", discussionTopicSlug);
-		result.put("problemId", problemId);
-		result.put("discussionThreads", discussionThreads);
-		result.put("discussionTopics", discussionService.getDiscussionTopicsWithHierarchy());
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request, HttpServletResponse response);
 
 	/**
 	 * 获取讨论帖子列表.
@@ -122,24 +90,7 @@ public class DiscussionController {
 			@RequestParam(value="topicSlug", required=false, defaultValue="") String discussionTopicSlug,
 			@ApiParam(value="试题的唯一标识符", name="problemId")
 			@RequestParam(value="problemId", required=false, defaultValue="-1") long problemId,
-			HttpServletRequest request) {
-		if ( startIndex < 0 ) {
-			startIndex = 0;
-		}
-		List<DiscussionThread> discussionThreads = null;
-		if ( problemId != -1 ) {
-			discussionThreads = discussionService.getDiscussionThreadsOfProblem(
-					problemId, startIndex, NUMBER_OF_THREADS_PER_REQUEST);
-		} else {
-			discussionThreads = discussionService.getDiscussionThreadsOfTopic(
-					discussionTopicSlug, startIndex, NUMBER_OF_THREADS_PER_REQUEST);
-		}
-
-		Map<String, Object> result = new HashMap<>(3, 1);
-		result.put("isSuccessful", discussionThreads != null && !discussionThreads.isEmpty());
-		result.put("discussionThreads", discussionThreads);
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 显示讨论详情页面.
@@ -153,25 +104,7 @@ public class DiscussionController {
 	public ResponseData discussionThreadView(
 			@ApiParam(value="讨论帖子的唯一标识符", name="threadId")
 			@PathVariable("threadId") long discussionThreadId,
-			HttpServletRequest request, HttpServletResponse response) {
-		DiscussionThread discussionThread = discussionService.getDiscussionThreadUsingThreadId(discussionThreadId);
-		if ( discussionThread == null ) {
-			throw new ResourceNotFoundException();
-		}
-
-		HttpSession session = request.getSession();
-//		ModelAndView view = new ModelAndView("discussion/thread");
-		Map<String, Object> result = new HashMap<>();
-		result.put("discussionThread", discussionThread);
-		if ( isLoggedIn(session) ) {
-			List<DiscussionTopic> discussionTopics = discussionService.getDiscussionTopics();
-			User currentUser = HttpSessionParser.getCurrentUser(request.getSession());
-			result.put("currentUserAvatar",currentUser.getAvatarUrl());
-			result.put("discussionTopics", discussionTopics);
-			result.put("csrfToken", CsrfProtector.getCsrfToken(session));
-		}
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request, HttpServletResponse response);
 
 	/**
 	 * 显示创建讨论页面.
@@ -184,41 +117,7 @@ public class DiscussionController {
 	public ResponseData newDiscussionThreadView(
 			@ApiParam(value="试题的唯一编号", name="problemId", required=false, defaultValue="-1")
 			@RequestParam(value="problemId", required=false, defaultValue="-1") long problemId,
-			HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
-//		ModelAndView view = null;
-		Map<String, Object> result = new HashMap<>();
-		if ( !isLoggedIn(session) ) {
-			RedirectView redirectView = new RedirectView(request.getContextPath() + "/accounts/login");
-			redirectView.setExposeModelAttributes(false);
-			result.put("msg","显示没有登录的页面");
-		} else {
-			List<DiscussionTopic> discussionTopics = discussionService.getDiscussionTopics();
-			Problem problem = null;
-			if ( problemId != -1 ) {
-				problem = problemService.getProblem(problemId);
-			}
-
-			result.put("msg","显示登录之后的页面");
-			result.put("discussionTopics", discussionTopics);
-			result.put("relatedProblem", problem);
-			result.put("csrfToken", CsrfProtector.getCsrfToken(session));
-		}
-		return ResponseData.ok().data("result",result);
-	}
-
-	/**
-	 * 检查用户是否已经登录.
-	 * @param session - HttpSession 对象
-	 * @return 用户是否已经登录
-	 */
-	private boolean isLoggedIn(HttpSession session) {
-		Boolean isLoggedIn = (Boolean)session.getAttribute("isLoggedIn");
-		if ( isLoggedIn == null || !isLoggedIn.booleanValue() ) {
-			return false;
-		}
-		return true;
-	}
+			HttpServletRequest request, HttpServletResponse response);
 
 	/**
 	 * 获取讨论回复.
@@ -234,33 +133,7 @@ public class DiscussionController {
 			@PathVariable("threadId") long discussionThreadId,
 			@ApiParam(value="讨论回复的起始Offset(已经获取的回复的数量).", name="startIndex")
 			@RequestParam(value="startIndex") long startIndex,
-			HttpServletRequest request) {
-		long currentUserUid = getUidOfUserLoggedIn(request.getSession());
-		if ( startIndex < 0 ) {
-			startIndex = 0;
-		}
-
-		List<DiscussionReply> discussionReplies = discussionService.getDiscussionRepliesOfThread(
-				discussionThreadId, currentUserUid, startIndex, NUMBER_OF_REPLIES_PER_REQUEST);
-		Map<String, Object> result = new HashMap<>(3, 1);
-		result.put("isSuccessful", discussionReplies != null && !discussionReplies.isEmpty());
-		result.put("discussionReplies", discussionReplies);
-		return ResponseData.ok().data("result",result);
-	}
-
-	/**
-	 * 获取当前登录用户的用户唯一标识符.
-	 * @param session - HttpSession 对象
-	 * @return 当前登录用户的用户唯一标识符
-	 */
-	private long getUidOfUserLoggedIn(HttpSession session) {
-		Boolean isLoggedIn = (Boolean)session.getAttribute("isLoggedIn");
-		Long userId = (Long)session.getAttribute("uid");
-		if ( isLoggedIn == null || !isLoggedIn.booleanValue() || userId == null ) {
-			return -1;
-		}
-		return userId;
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 处理用户对讨论回复投票的请求.
@@ -285,20 +158,7 @@ public class DiscussionController {
 			@RequestParam(value="voteDown") int voteDown,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String ipAddress = HttpRequestParser.getRemoteAddr(request);
-		User currentUser = HttpSessionParser.getCurrentUser(session);
-		boolean isCsrfTokenValid = CsrfProtector.isCsrfTokenValid(csrfToken, session);
-
-		Map<String, Boolean> result = discussionService.voteDiscussionReply(discussionThreadId,
-				discussionReplyId, currentUser, voteUp, voteDown, isCsrfTokenValid);
-		if ( result.get("isSuccessful") ) {
-			LOGGER.info(String.format("User: {%s} voted discussion reply #%d {Up: %d, Down: %d} at %s",
-					new Object[] {currentUser, discussionReplyId, voteUp, voteDown, ipAddress}));
-		}
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 处理用户创建讨论帖子的请求.
@@ -321,23 +181,7 @@ public class DiscussionController {
 			@ApiParam(value="用于防止CSRF攻击的Token",name="threadContent")
 			@RequestParam(value="threadContent") String discussionThreadContent,
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String ipAddress = HttpRequestParser.getRemoteAddr(request);
-		User currentUser = HttpSessionParser.getCurrentUser(session);
-		long relatedProblemId = relatedProblemIdString.isEmpty() ? -1 : Integer.parseInt(relatedProblemIdString);
-		boolean isCsrfTokenValid = CsrfProtector.isCsrfTokenValid(csrfToken, session);
-		System.out.println("是否启动了这个讨论");
-
-		Map<String, Object> result = discussionService.createDiscussionThread(
-				currentUser, discussionTopicSlug, relatedProblemId, discussionThreadTitle,
-				discussionThreadContent, isCsrfTokenValid);
-		if ( (Boolean) result.get("isSuccessful") ) {
-			LOGGER.info(String.format("User: {%s} created discussion thread[Title=%s] at %s",
-					new Object[] {currentUser, discussionThreadTitle, ipAddress}));
-		}
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 处理用户编辑讨论帖子的请求.
@@ -359,20 +203,7 @@ public class DiscussionController {
 			@RequestParam(value="discussionThreadTitle") String discussionThreadTitle,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String ipAddress = HttpRequestParser.getRemoteAddr(request);
-		User currentUser = HttpSessionParser.getCurrentUser(session);
-		boolean isCsrfTokenValid = CsrfProtector.isCsrfTokenValid(csrfToken, session);
-
-		Map<String, Boolean> result = discussionService.editDiscussionThread(
-				discussionThreadId, currentUser, discussionTopicSlug, discussionThreadTitle, isCsrfTokenValid);
-		if ( result.get("isSuccessful") ) {
-			LOGGER.info(String.format("User: {%s} voted discussion thread #%d at %s",
-					new Object[] {currentUser, discussionThreadId, ipAddress}));
-		}
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 处理用户创建讨论回复的请求.
@@ -391,20 +222,7 @@ public class DiscussionController {
 			@RequestParam(value="replyContent") String replyContent,
 			@ApiParam(value="用于防止CSRF攻击的Token",name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String ipAddress = HttpRequestParser.getRemoteAddr(request);
-		User currentUser = HttpSessionParser.getCurrentUser(session);
-		boolean isCsrfTokenValid = CsrfProtector.isCsrfTokenValid(csrfToken, session);
-
-		Map<String, Object> result = discussionService.createDiscussionReply(
-				discussionThreadId, currentUser, replyContent, isCsrfTokenValid);
-		if ( (Boolean) result.get("isSuccessful") ) {
-			LOGGER.info(String.format("User: {%s} created discussion reply for thread #%d at %s",
-					new Object[] {currentUser, discussionThreadId, ipAddress}));
-		}
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 处理用户编辑讨论回复的请求.
@@ -425,20 +243,7 @@ public class DiscussionController {
 			@RequestParam(value="replyContent") String replyContent,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String ipAddress = HttpRequestParser.getRemoteAddr(request);
-		User currentUser = HttpSessionParser.getCurrentUser(session);
-		boolean isCsrfTokenValid = CsrfProtector.isCsrfTokenValid(csrfToken, session);
-
-		Map<String, Boolean> result = discussionService.editDiscussionReply(
-				discussionReplyId, currentUser, replyContent, isCsrfTokenValid);
-		if ( result.get("isSuccessful") ) {
-			LOGGER.info(String.format("User: {%s} edited discussion reply #%d at %s",
-					new Object[] {currentUser, discussionReplyId, ipAddress}));
-		}
-		return ResponseData.ok().data("result",result);
-	}
+			HttpServletRequest request);
 
 	/**
 	 * 处理用户删除讨论回复的请求.
@@ -456,45 +261,6 @@ public class DiscussionController {
 			@RequestParam(value="discussionReplyId") long discussionReplyId,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String ipAddress = HttpRequestParser.getRemoteAddr(request);
-		User currentUser = HttpSessionParser.getCurrentUser(session);
-		boolean isCsrfTokenValid = CsrfProtector.isCsrfTokenValid(csrfToken, session);
+			HttpServletRequest request);
 
-		Map<String, Boolean> result = discussionService.deleteDiscussionReply(
-				discussionReplyId, currentUser, isCsrfTokenValid);
-		if ( result.get("isSuccessful") ) {
-			LOGGER.info(String.format("User: {%s} deleted discussion reply #%d at %s",
-					new Object[] {currentUser, discussionReplyId, ipAddress}));
-		}
-		return ResponseData.ok().data("result",result);
-	}
-
-	/**
-	 * 每一次请求的讨论帖子数量.
-	 */
-	private static final int NUMBER_OF_THREADS_PER_REQUEST = 25;
-
-	/**
-	 * 每一次请求的讨论回复数量.
-	 */
-	private static final int NUMBER_OF_REPLIES_PER_REQUEST = 50;
-
-	/**
-	 * 自动注入的DiscussionService对象.
-	 */
-	@Autowired
-	private DiscussionService discussionService;
-
-	/**
-	 * 自动注入的ProblemService对象.
-	 */
-	@Autowired
-	private ProblemService problemService;
-
-	/**
-	 * 日志记录器.
-	 */
-	private static final Logger LOGGER = LogManager.getLogger(org.verwandlung.voj.web.service.DiscussionClientService.class);
 }

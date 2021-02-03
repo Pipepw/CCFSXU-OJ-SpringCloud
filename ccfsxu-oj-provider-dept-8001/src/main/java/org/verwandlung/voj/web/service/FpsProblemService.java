@@ -1,16 +1,11 @@
 package org.verwandlung.voj.web.service;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.mysql.cj.xdevapi.JsonArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.verwandlung.voj.web.controller.AccountsController;
-import org.verwandlung.voj.web.model.ProblemTag;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -124,7 +119,7 @@ public class FpsProblemService {
     /**
      * 日志记录器.
      */
-    private static final Logger LOGGER = LogManager.getLogger(AccountsController.class);
+    private static final Logger LOGGER = LogManager.getLogger(AccountsClientService.class);
 }
 
 class testCase{

@@ -13,6 +13,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.vervandlung.voj</groupId>
+            <artifactId>ccfsxu-oj-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!--eureka-server服务端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
