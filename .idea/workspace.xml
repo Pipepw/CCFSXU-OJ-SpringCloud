@@ -2,38 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb19322f-192d-4b5e-994a-b270e983c14e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/CCFSXU_OJ_Consumer80_Feign_App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/AccountsController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/AdministrationController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/ContestsController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/DefaultController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/DiscussionController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/ProblemsController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/controller/SubmissionController_Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-hystrix-dashboard-9001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-hystrix-dashboard-9001/src/main/java/org/verwandlung/voj/web/CCFSXU_OJ_Consumer_DashBoard_App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-hystrix-dashboard-9001/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/AccountsClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/AccountsClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/AdministrationClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/AdministrationClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/ContestsClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/ContestsClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/DefaultClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/DefaultClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/DiscussionClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/DiscussionClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/ProblemsClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/ProblemsClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/SubmissionClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/src/main/java/org/verwandlung/voj/web/service/SubmissionClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/AccountsClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/AccountsClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/AdministrationClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/AdministrationClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/ContestsClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/ContestsClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/DefaultClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/DefaultClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/DiscussionClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/DiscussionClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/ProblemsClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/ProblemsClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/SubmissionClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-api/target/classes/org/verwandlung/voj/web/service/SubmissionClientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/src/main/java/org/verwandlung/voj/web/controller/DiscussionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/src/main/java/org/verwandlung/voj/web/controller/DiscussionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/target/classes/org/verwandlung/voj/web/controller/DiscussionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/target/classes/org/verwandlung/voj/web/controller/DiscussionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/CCFSXU_OJ_Consumer80_Feign_App.java" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java/org/verwandlung/voj/web/CCFSXU_OJ_Consumer80_Feign_App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/target/classes/org/verwandlung/voj/web/CCFSXU_OJ_Consumer80_Feign_App.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-consumer-80/target/classes/org/verwandlung/voj/web/CCFSXU_OJ_Consumer80_Feign_App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/target/classes/org/verwandlung/voj/web/WebApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/ccfsxu-oj-provider-8001/target/classes/org/verwandlung/voj/web/WebApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +59,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.verwandlung.voj.web" />
@@ -105,6 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CCFSXU_OJ_Consumer_DashBoard_App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ccfsxu-oj-consumer-hystrix-dashboard" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.verwandlung.voj.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.verwandlung.voj.web.CCFSXU_OJ_Consumer_DashBoard_App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaServer7001_App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="ccfsxu-oj-eureka-7001" />
       <extension name="coverage">
@@ -127,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.CCFSXU_OJ_Consumer_DashBoard_App" />
         <item itemvalue="Spring Boot.EurekaServer7001_App" />
       </list>
     </recent_temporary>
@@ -135,7 +132,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.16120219" />
+          <option name="contentProportion" value="0.19330601" />
           <treeState>
             <expand>
               <path>
@@ -172,7 +169,8 @@
       <workItem from="1612351772657" duration="3555000" />
       <workItem from="1612355397847" duration="97000" />
       <workItem from="1612355539870" duration="1535000" />
-      <workItem from="1612357142817" duration="11645000" />
+      <workItem from="1612357142817" duration="21863000" />
+      <workItem from="1612413968368" duration="2202000" />
     </task>
     <servers />
   </component>
@@ -219,54 +217,70 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612357455363" />
-    <state width="1227" height="207" key="GridCell.Tab.0.bottom" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.0.bottom" timestamp="1612415975430">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.0.center" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975430" />
+    <state width="1180" height="247" key="GridCell.Tab.0.center" timestamp="1612415975430">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.0.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.0.left" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.0.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975430" />
+    <state width="1180" height="247" key="GridCell.Tab.0.left" timestamp="1612415975430">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.0.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.0.right" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.0.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975430" />
+    <state width="1180" height="247" key="GridCell.Tab.0.right" timestamp="1612415975430">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.0.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.1.bottom" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.0.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975430" />
+    <state width="1180" height="247" key="GridCell.Tab.1.bottom" timestamp="1612415975431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.1.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.1.center" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.1.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975431" />
+    <state width="1180" height="247" key="GridCell.Tab.1.center" timestamp="1612415975431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.1.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.1.left" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.1.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975431" />
+    <state width="1180" height="247" key="GridCell.Tab.1.left" timestamp="1612415975430">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.1.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
-    <state width="1227" height="207" key="GridCell.Tab.1.right" timestamp="1612400043044">
+    <state width="1180" height="247" key="GridCell.Tab.1.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975430" />
+    <state width="1180" height="247" key="GridCell.Tab.1.right" timestamp="1612415975431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1227" height="207" key="GridCell.Tab.1.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612400043044" />
+    <state width="1180" height="247" key="GridCell.Tab.1.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612415975431" />
+    <state width="1227" height="406" key="GridCell.Tab.2.bottom" timestamp="1612408388546">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1227" height="406" key="GridCell.Tab.2.bottom/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612408388546" />
+    <state width="1227" height="406" key="GridCell.Tab.2.center" timestamp="1612408388546">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1227" height="406" key="GridCell.Tab.2.center/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612408388546" />
+    <state width="1227" height="406" key="GridCell.Tab.2.left" timestamp="1612408388546">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1227" height="406" key="GridCell.Tab.2.left/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612408388546" />
+    <state width="1227" height="406" key="GridCell.Tab.2.right" timestamp="1612408388546">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1227" height="406" key="GridCell.Tab.2.right/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612408388546" />
     <state x="249" y="6" key="SettingsEditor" timestamp="1612357527488">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="249" y="6" key="SettingsEditor/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612357527488" />
-    <state x="430" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1612355671524">
+    <state x="430" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1612414121915">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="430" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612355671524" />
+    <state x="430" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612414121915" />
     <state x="437" y="149" width="803" height="632" key="find.popup" timestamp="1612365856413">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="437" y="149" width="803" height="632" key="find.popup/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612365856413" />
-    <state x="178" y="0" key="new project wizard" timestamp="1612358322103">
+    <state x="178" y="0" key="new project wizard" timestamp="1612404636521">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612358322103" />
+    <state x="178" y="0" key="new project wizard/0.0.1536.864/-1440.103.1152.720@0.0.1536.864" timestamp="1612404636521" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1612364502669">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

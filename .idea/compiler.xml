@@ -7,12 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ccfsxu-oj-consumer-80" />
         <module name="ccfsxu-oj-api" />
+        <module name="ccfsxu-oj-consumer-80" />
         <module name="ccfsxu-oj-eureka-7001" />
+        <module name="ccfsxu-oj-consumer-hystrix-dashboard-9001" />
         <module name="ccfsxu-oj-provider-8001" />
+        <module name="ccfsxu-oj-consumer-hystrix-dashboard" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ccfsxu-oj-consumer-hystrix-dashboard-9001" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

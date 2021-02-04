@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/ccfsxu-oj-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccfsxu-oj-consumer-80/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccfsxu-oj-consumer-hystrix-dashboard-9001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccfsxu-oj-consumer-hystrix-dashboard-9001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccfsxu-oj-eureka-7001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccfsxu-oj-eureka-7001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccfsxu-oj-provider-8001/src/main/java" charset="UTF-8" />

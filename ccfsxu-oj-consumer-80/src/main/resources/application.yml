@@ -8,7 +8,7 @@ feign:
 
 spring:
   main:
-    allow-bean-definition-overriding: true # 解决接口名冲突的问题
+    allow-bean-definition-overriding: true # 解决接口名冲突的问题(就是多个接口用了同一个服务)
 
 # 配置集群eureka注册中心
 eureka:
