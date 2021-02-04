@@ -1,0 +1,19 @@
+server:
+  port: 80
+
+# 在feign中开启熔断器
+feign:
+  hystrix:
+    enabled: true
+
+spring:
+  main:
+    allow-bean-definition-overriding: true # 解决接口名冲突的问题
+
+# 配置集群eureka注册中心
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka/
+#      defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/

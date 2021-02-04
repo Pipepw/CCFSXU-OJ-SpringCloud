@@ -37,13 +37,15 @@
  *                          HERE BE BUDDHA
  *
  */
-package org.verwandlung.voj.web.service;
+package org.verwandlung.voj.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import org.verwandlung.voj.web.service.SubmissionClientService;
 import org.verwandlung.voj.web.util.ResponseData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,10 +56,10 @@ import java.io.IOException;
  * 加载/显示评测的相关信息.
  *
  */
-@FeignClient(value = "CCUSXU-OJ")
 @Api(tags = "加载/显示评测的相关信息")
-@RequestMapping(value="/submission")
-public interface SubmissionClientService {
+@RestController
+@RequestMapping(value="/consumer/submission")
+public class SubmissionController_Consumer {
 	/**
 	 * 显示评测列表的页面.
 	 * @param problemId - 试题的唯一标识符
@@ -67,14 +69,17 @@ public interface SubmissionClientService {
 	 * @return 包含提交列表的ModelAndView对象 
 	 */
 	@ApiOperation(value = "显示评测列表的页面")
-	@RequestMapping(value="", method=RequestMethod.GET)
+	@RequestMapping(value="", method= RequestMethod.GET)
 	public ResponseData submissionsView(
-			@ApiParam(value="试题的唯一标识符", name="problemId")
-			@RequestParam(value="problemId", required=false, defaultValue="0") long problemId,
-			@ApiParam(value="用户的用户名", name="username")
-			@RequestParam(value="username", required=false, defaultValue="") String username,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @RequestParam(value = "problemId", required = false, defaultValue = "0") long problemId,
+            @ApiParam(value = "用户的用户名", name = "username")
+            @RequestParam(value = "username", required = false, defaultValue = "") String username,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.submissionClientService
+				.submissionsView(problemId, username, request, response);
+	}
+
 	/**
 	 * 获取历史评测信息的列表.
 	 * @param problemId - 试题的唯一标识符
@@ -85,15 +90,19 @@ public interface SubmissionClientService {
 	 */
 	@ApiOperation(value = "获取历史评测信息的列表")
 	@RequestMapping(value="/getSubmissions.action", method=RequestMethod.GET)
-	public @ResponseBody ResponseData getSubmissionsAction(
-			@ApiParam(value="试题的唯一标识符", name="problemId")
-			@RequestParam(value="problemId", required=false, defaultValue="0") long problemId,
-			@ApiParam(value="用户的用户名", name="username")
-			@RequestParam(value="username", required=false, defaultValue="") String username,
-			@ApiParam(value="当前加载的最后一条记录的提交唯一标识符", name="startIndex")
-			@RequestParam(value="startIndex") long startIndex,
-			@RequestParam(value="request") HttpServletRequest request);
-	
+	public @ResponseBody
+	ResponseData getSubmissionsAction(
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @RequestParam(value = "problemId", required = false, defaultValue = "0") long problemId,
+            @ApiParam(value = "用户的用户名", name = "username")
+            @RequestParam(value = "username", required = false, defaultValue = "") String username,
+            @ApiParam(value = "当前加载的最后一条记录的提交唯一标识符", name = "startIndex")
+            @RequestParam(value = "startIndex") long startIndex,
+            HttpServletRequest request){
+		return this.submissionClientService
+				.getSubmissionsAction(problemId, username, startIndex, request);
+	}
+
 	/**
 	 * 获取最新的评测信息的列表.
 	 * @param problemId - 试题的唯一标识符
@@ -105,41 +114,50 @@ public interface SubmissionClientService {
 	@ApiOperation(value = "获取最新的评测信息的列表")
 	@RequestMapping(value="/getLatestSubmissions.action", method=RequestMethod.GET)
 	public @ResponseBody ResponseData getLatestSubmissionsAction(
-			@ApiParam(value="试题的唯一标识符", name="problemId")
-			@RequestParam(value="problemId", required=false, defaultValue="0") long problemId,
-			@ApiParam(value="用户的用户名", name="username")
-			@RequestParam(value="username", required=false, defaultValue="") String username,
-			@ApiParam(value="当前加载的最新一条记录的提交唯一标识符", name="startIndex")
-			@RequestParam(value="startIndex") long startIndex,
-			@RequestParam(value="request") HttpServletRequest request);
-	
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @RequestParam(value = "problemId", required = false, defaultValue = "0") long problemId,
+            @ApiParam(value = "用户的用户名", name = "username")
+            @RequestParam(value = "username", required = false, defaultValue = "") String username,
+            @ApiParam(value = "当前加载的最新一条记录的提交唯一标识符", name = "startIndex")
+            @RequestParam(value = "startIndex") long startIndex,
+            HttpServletRequest request){
+		return this.submissionClientService
+				.getLatestSubmissionsAction(problemId, username, startIndex, request);
+	}
+
 	/**
 	 * 显示提交记录详细信息的页面.
 	 * @param submissionId - 提交记录的唯一标识符
 	 * @param request - HttpRequest对象
 	 * @param response - HttpResponse对象
-	 * @return 包含提交详细信息的ModelAndView对象 
+	 * @return 包含提交详细信息的ModelAndView对象
 	 */
 	@ApiOperation(value = "显示提交记录详细信息的页面")
 	@RequestMapping(value="/{submissionId}", method=RequestMethod.GET)
 	public ResponseData submissionView(
-			@ApiParam(value="提交记录的唯一标识符",name="submissionId")
-			@PathVariable("submissionId") long submissionId,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @ApiParam(value = "提交记录的唯一标识符", name = "submissionId")
+            @PathVariable("submissionId") long submissionId,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.submissionClientService
+			.submissionView(submissionId, request, response);
+	}
+
 	/**
 	 * 获取实时的评测结果.
 	 * @param submissionId - 提交记录的唯一标识符
 	 * @return 包含评测结果信息的StreamingResponseBody对象
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	@ApiOperation(value = "获取实时的评测结果")
 	@RequestMapping(value="/getRealTimeJudgeResult.action", method=RequestMethod.GET)
 	public ResponseData getRealTimeJudgeResultAction(
-			@RequestParam(value="submissionId") long submissionId,
-			@RequestParam(value="csrfToken") String csrfToken,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @RequestParam(value = "submissionId") long submissionId,
+            @RequestParam(value = "csrfToken") String csrfToken,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.submissionClientService
+				.getRealTimeJudgeResultAction(submissionId, csrfToken, request, response);
+	}
+
 	/**
 	 * 获取提交记录的详细信息.
 	 * @param submissionId - 提交记录的唯一标识符
@@ -149,9 +167,12 @@ public interface SubmissionClientService {
 	@ApiOperation(value = "获取提交记录的详细信息")
 	@RequestMapping(value="/getSubmission.action", method=RequestMethod.GET)
 	public @ResponseBody ResponseData getSubmissionAction(
-			@ApiParam(value="提交记录的唯一标识符", name="submissionId")
-			@RequestParam(value="submissionId") long submissionId,
-			@RequestParam(value="request") HttpServletRequest request);
+            @ApiParam(value = "提交记录的唯一标识符", name = "submissionId")
+            @RequestParam(value = "submissionId") long submissionId,
+            HttpServletRequest request){
+		return this.submissionClientService
+				.getSubmissionAction(submissionId, request);
+	}
 
 	/**
 	 * 提交正确率
@@ -159,6 +180,11 @@ public interface SubmissionClientService {
 	 */
 	@ApiOperation(value = "提交正确率")
 	@RequestMapping(value = "/submissionRank",method = RequestMethod.GET)
-	public ResponseData getSubmissionRank();
+	public ResponseData getSubmissionRank(){
+		return this.submissionClientService
+				.getSubmissionRank();
+	}
 
+	@Autowired
+	SubmissionClientService submissionClientService;
 }

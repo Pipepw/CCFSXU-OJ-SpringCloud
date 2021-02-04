@@ -53,7 +53,7 @@ import javax.servlet.http.HttpServletResponse;
  * 处理讨论的相关请求.
  *
  */
-@FeignClient(value = "CCUSXU-OJ-DEPT")
+@FeignClient(value = "CCUSXU-OJ")
 @Api(tags = "处理讨论的相关请求")
 @RequestMapping(value="/discussion")
 public interface DiscussionClientService {
@@ -72,7 +72,7 @@ public interface DiscussionClientService {
 			@RequestParam(value="topicSlug", required=false, defaultValue="") String discussionTopicSlug,
 			@ApiParam(value="试题的唯一标识符", name="problemId", required=false, defaultValue="-1")
 			@RequestParam(value="problemId", required=false, defaultValue="-1") long problemId,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 获取讨论帖子列表.
@@ -90,7 +90,7 @@ public interface DiscussionClientService {
 			@RequestParam(value="topicSlug", required=false, defaultValue="") String discussionTopicSlug,
 			@ApiParam(value="试题的唯一标识符", name="problemId")
 			@RequestParam(value="problemId", required=false, defaultValue="-1") long problemId,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 显示讨论详情页面.
@@ -104,7 +104,7 @@ public interface DiscussionClientService {
 	public ResponseData discussionThreadView(
 			@ApiParam(value="讨论帖子的唯一标识符", name="threadId")
 			@PathVariable("threadId") long discussionThreadId,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 显示创建讨论页面.
@@ -117,7 +117,7 @@ public interface DiscussionClientService {
 	public ResponseData newDiscussionThreadView(
 			@ApiParam(value="试题的唯一编号", name="problemId", required=false, defaultValue="-1")
 			@RequestParam(value="problemId", required=false, defaultValue="-1") long problemId,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 获取讨论回复.
@@ -133,7 +133,7 @@ public interface DiscussionClientService {
 			@PathVariable("threadId") long discussionThreadId,
 			@ApiParam(value="讨论回复的起始Offset(已经获取的回复的数量).", name="startIndex")
 			@RequestParam(value="startIndex") long startIndex,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户对讨论回复投票的请求.
@@ -158,7 +158,7 @@ public interface DiscussionClientService {
 			@RequestParam(value="voteDown") int voteDown,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户创建讨论帖子的请求.
@@ -178,10 +178,11 @@ public interface DiscussionClientService {
 			@RequestParam(value="relatedProblemId") String relatedProblemIdString,
 			@ApiParam(value="讨论帖子的标题",name="threadTitle")
 			@RequestParam(value="threadTitle") String discussionThreadTitle,
-			@ApiParam(value="用于防止CSRF攻击的Token",name="threadContent")
-			@RequestParam(value="threadContent") String discussionThreadContent,
-			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request);
+			@ApiParam(value = "讨论帖子的内容", name = "threadContent")
+			@RequestParam(value = "threadContent") String discussionThreadContent,
+			@ApiParam(value = "用于防止CSRF攻击的Token", name = "csrfToken")
+			@RequestParam(value = "csrfToken") String csrfToken,
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户编辑讨论帖子的请求.
@@ -203,7 +204,7 @@ public interface DiscussionClientService {
 			@RequestParam(value="discussionThreadTitle") String discussionThreadTitle,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户创建讨论回复的请求.
@@ -222,7 +223,7 @@ public interface DiscussionClientService {
 			@RequestParam(value="replyContent") String replyContent,
 			@ApiParam(value="用于防止CSRF攻击的Token",name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户编辑讨论回复的请求.
@@ -243,7 +244,7 @@ public interface DiscussionClientService {
 			@RequestParam(value="replyContent") String replyContent,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户删除讨论回复的请求.
@@ -261,6 +262,6 @@ public interface DiscussionClientService {
 			@RequestParam(value="discussionReplyId") long discussionReplyId,
 			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
 			@RequestParam(value="csrfToken") String csrfToken,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 }

@@ -37,13 +37,15 @@
  *                          HERE BE BUDDHA
  *
  */
-package org.verwandlung.voj.web.service;
+package org.verwandlung.voj.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import org.verwandlung.voj.web.service.DefaultClientService;
 import org.verwandlung.voj.web.util.ResponseData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,10 +55,10 @@ import javax.servlet.http.HttpServletResponse;
  * 处理应用程序公共的请求.
  *
  */
-@FeignClient(value = "CCUSXU-OJ")
 @Api(tags = "处理应用程序公共的请求")
-@RequestMapping(value="/")
-public interface DefaultClientService {
+@RestController
+@RequestMapping(value="/consumer")
+public class DefaultController_Consumer {
 
 	/**
 	 * 显示使用条款页面.
@@ -65,9 +67,12 @@ public interface DefaultClientService {
 	 * @return 一个包含使用条款页面内容的ModelAndView对象
 	 */
 	@ApiOperation(value = "显示使用条款页面")
-	@RequestMapping(value="/terms", method=RequestMethod.GET)
+	@RequestMapping(value="/terms", method= RequestMethod.GET)
 	public ResponseData termsView(
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.termsView(request, response);
+	}
 
 	/**
 	 * 显示隐私页面.
@@ -78,7 +83,10 @@ public interface DefaultClientService {
 	@ApiOperation(value = "显示隐私页面")
 	@RequestMapping(value="/privacy", method=RequestMethod.GET)
 	public ResponseData privacyView(
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.privacyView(request, response);
+	}
 
 	/**
 	 * 显示评测机信息页面.
@@ -89,7 +97,10 @@ public interface DefaultClientService {
 	@ApiOperation(value = "显示评测机信息页面")
 	@RequestMapping(value="/judgers", method=RequestMethod.GET)
 	public ResponseData judgersView(
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.judgersView(request, response);
+	}
 
 	/**
 	 * 获取评测机列表.
@@ -99,10 +110,14 @@ public interface DefaultClientService {
 	 */
 	@ApiOperation(value = "获取评测机列表")
 	@RequestMapping(value="/getJudgers.action", method=RequestMethod.GET)
-	public @ResponseBody ResponseData getJudgersAction(
-			@ApiParam(value="当前加载评测机的UID", name="startIndex")
-			@RequestParam(value="startIndex", required=false, defaultValue="0") long offset,
-			@RequestParam(value="request") HttpServletRequest request);
+	public @ResponseBody
+	ResponseData getJudgersAction(
+            @ApiParam(value = "当前加载评测机的UID", name = "startIndex")
+            @RequestParam(value = "startIndex", required = false, defaultValue = "0") long offset,
+            HttpServletRequest request){
+		return this.defaultClientService
+				.getJudgersAction(offset, request);
+	}
 
 
 	/**
@@ -114,7 +129,10 @@ public interface DefaultClientService {
 	@ApiOperation(value = "显示帮助页面")
 	@RequestMapping(value="/help", method=RequestMethod.GET)
 	public ResponseData helpView(
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.helpView(request, response);
+	}
 
 	/**
 	 * 显示关于页面.
@@ -125,7 +143,10 @@ public interface DefaultClientService {
 	@ApiOperation(value = "显示关于页面")
 	@RequestMapping(value="/about", method=RequestMethod.GET)
 	public ResponseData aboutView(
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.aboutView(request, response);
+	}
 
 	/**
 	 * 显示语言切换的页面.
@@ -136,9 +157,12 @@ public interface DefaultClientService {
 	@ApiOperation(value = "显示语言切换的页面")
 	@RequestMapping(value="/worldwide", method=RequestMethod.GET)
 	public ResponseData worldwideView(
-			@ApiParam(value="语言切换的页面", name="forward")
-			@RequestParam(value="forward", required=false, defaultValue="") String forwardUrl,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            @ApiParam(value = "语言切换的页面", name = "forward")
+            @RequestParam(value = "forward", required = false, defaultValue = "") String forwardUrl,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.worldwideView(forwardUrl, request, response);
+	}
 
 	/**
 	 * 处理用户切换语言的请求.
@@ -150,9 +174,12 @@ public interface DefaultClientService {
 	@ApiOperation(value = "处理用户切换语言的请求")
 	@RequestMapping(value="/worldwide.action", method=RequestMethod.GET)
 	public @ResponseBody ResponseData localizationAction(
-			@ApiParam(value="需要切换的语言代码", name="language")
-			@RequestParam(value="language") String language,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            @ApiParam(value = "需要切换的语言代码", name = "language")
+            @RequestParam(value = "language") String language,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.localizationAction(language, request, response);
+	}
 
 	/**
 	 * 显示升级浏览器页面.
@@ -163,6 +190,11 @@ public interface DefaultClientService {
 	@ApiOperation(value = "显示升级浏览器页面")
 	@RequestMapping(value="/not-supported", method=RequestMethod.GET)
 	public ResponseData notSupportedView(
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            HttpServletRequest request, HttpServletResponse response){
+		return this.defaultClientService
+				.notSupportedView(request, response);
+	}
 
+	@Autowired
+	DefaultClientService defaultClientService;
 }

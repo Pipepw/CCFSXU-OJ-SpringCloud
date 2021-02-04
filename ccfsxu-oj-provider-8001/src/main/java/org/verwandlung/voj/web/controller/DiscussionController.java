@@ -318,9 +318,10 @@ public class DiscussionController {
 			@RequestParam(value="relatedProblemId") String relatedProblemIdString,
 			@ApiParam(value="讨论帖子的标题",name="threadTitle")
 			@RequestParam(value="threadTitle") String discussionThreadTitle,
-			@ApiParam(value="用于防止CSRF攻击的Token",name="threadContent")
-			@RequestParam(value="threadContent") String discussionThreadContent,
-			@RequestParam(value="csrfToken") String csrfToken,
+			@ApiParam(value = "讨论帖子的内容", name = "threadContent")
+			@RequestParam(value = "threadContent") String discussionThreadContent,
+			@ApiParam(value = "用于防止CSRF攻击的Token", name = "csrfToken")
+			@RequestParam(value = "csrfToken") String csrfToken,
 			HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String ipAddress = HttpRequestParser.getRemoteAddr(request);

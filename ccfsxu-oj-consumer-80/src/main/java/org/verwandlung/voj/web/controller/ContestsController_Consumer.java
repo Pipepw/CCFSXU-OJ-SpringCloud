@@ -37,13 +37,15 @@
  *                          HERE BE BUDDHA
  *
  */
-package org.verwandlung.voj.web.service;
+package org.verwandlung.voj.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import org.verwandlung.voj.web.service.ContestsClientService;
 import org.verwandlung.voj.web.util.ResponseData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,10 +56,10 @@ import javax.servlet.http.HttpServletResponse;
  * 处理竞赛的相关请求.
  *
  */
-@FeignClient(value = "CCUSXU-OJ")
 @Api(tags = "处理竞赛的相关请求")
-@RequestMapping(value="/contest")
-public interface ContestsClientService {
+@RestController
+@RequestMapping(value="/consumer/contest")
+public class ContestsController_Consumer {
 	/**
 	 * 显示竞赛列表页面.
 	 * @param keyword - 竞赛的关键词
@@ -66,12 +68,15 @@ public interface ContestsClientService {
 	 * @return 一个包含竞赛列表页面内容的ModelAndView对象
 	 */
 	@ApiOperation(value = "显示竞赛列表页面")
-	@RequestMapping(value="", method=RequestMethod.GET)
+	@RequestMapping(value="", method= RequestMethod.GET)
 	public ResponseData contestsView(
-			@ApiParam(value="关键字", name="keyword", required = false)
-			@RequestParam(value="keyword", required = false) String keyword,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @ApiParam(value = "关键字", name = "keyword", required = false)
+            @RequestParam(value = "keyword", required = false) String keyword,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.contestsClientService
+				.contestsView(keyword, request, response);
+	}
+
 	/**
 	 * 获取竞赛的列表.
 	 * @param keyword - 竞赛的关键词
@@ -81,26 +86,33 @@ public interface ContestsClientService {
 	 */
 	@ApiOperation(value = "获取竞赛的列表")
 	@RequestMapping(value="/getContests.action", method=RequestMethod.GET)
-	public @ResponseBody ResponseData getContestsAction(
-			@ApiParam(value="关键字",name="keyword")
-			@RequestParam(value="keyword", required=false) String keyword,
-			@ApiParam(value="当前加载的最后一条记录的索引值 (Index)",name="startIndex")
-			@RequestParam(value="startIndex") long startIndex,
-			@RequestParam(value="request") HttpServletRequest request);
-	
+	public @ResponseBody
+	ResponseData getContestsAction(
+            @ApiParam(value = "关键字", name = "keyword")
+            @RequestParam(value = "keyword", required = false) String keyword,
+            @ApiParam(value = "当前加载的最后一条记录的索引值 (Index)", name = "startIndex")
+            @RequestParam(value = "startIndex") long startIndex,
+            HttpServletRequest request){
+		return this.contestsClientService
+				.getContestsAction(keyword, startIndex, request);
+	}
+
 	/**
 	 * 显示竞赛详细信息的页面.
 	 * @param contestId - 竞赛的唯一标识符
 	 * @param request - HttpRequest对象
 	 * @param response - HttpResponse对象
-	 * @return 包含提交详细信息的ModelAndView对象 
+	 * @return 包含提交详细信息的ModelAndView对象
 	 */
 	@ApiOperation(value = "显示竞赛详细信息的页面")
 	@RequestMapping(value="/{contestId}", method=RequestMethod.GET)
 	public ResponseData contestView(
-			@ApiParam(value="竞赛的唯一标识符",name="contestId")
-			@PathVariable("contestId") long contestId,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            @ApiParam(value = "竞赛的唯一标识符", name = "contestId")
+            @PathVariable("contestId") long contestId,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.contestsClientService
+				.contestView(contestId, request, response);
+	}
 
 	/**
 	 * 处理用户参加竞赛的请求.
@@ -113,11 +125,14 @@ public interface ContestsClientService {
 	@ApiOperation(value = "处理用户参加竞赛的请求")
 	@RequestMapping(value="/{contestId}/attend.action", method=RequestMethod.POST)
 	public @ResponseBody ResponseData attendContestAction(
-			@ApiParam(value="竞赛的唯一标识符",name="contestId")
-			@PathVariable("contestId") long contestId,
-			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
-			@RequestParam(value="csrfToken") String csrfToken,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            @ApiParam(value = "竞赛的唯一标识符", name = "contestId")
+            @PathVariable("contestId") long contestId,
+            @ApiParam(value = "用于防止CSRF攻击的Token", name = "csrfToken")
+            @RequestParam(value = "csrfToken") String csrfToken,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.contestsClientService
+				.attendContestAction(contestId, csrfToken, request, response);
+	}
 
 	/**
 	 * 显示排行榜.
@@ -129,9 +144,12 @@ public interface ContestsClientService {
 	@ApiOperation(value = "显示排行榜")
 	@RequestMapping(value="/{contestId}/leader_board", method=RequestMethod.GET)
 	public ResponseData leaderBoardView(
-			@ApiParam(value="竞赛的唯一标识符",name="contestId")
-			@PathVariable("contestId") long contestId,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            @ApiParam(value = "竞赛的唯一标识符", name = "contestId")
+            @PathVariable("contestId") long contestId,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.contestsClientService
+				.leaderBoardView(contestId, request, response);
+	}
 
 	/**
 	 * 显示竞赛中的试题信息.
@@ -144,11 +162,14 @@ public interface ContestsClientService {
 	@ApiOperation(value = "显示竞赛中的试题信息")
 	@RequestMapping(value="/{contestId}/p/{problemId}", method=RequestMethod.GET)
 	public ResponseData problemView(
-			@ApiParam(value="竞赛的唯一标识符", name="contestId")
-			@PathVariable("contestId") long contestId,
-			@ApiParam(value="试题的唯一标识符", name="problemId")
-			@PathVariable("problemId") long problemId,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
+            @ApiParam(value = "竞赛的唯一标识符", name = "contestId")
+            @PathVariable("contestId") long contestId,
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @PathVariable("problemId") long problemId,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.contestsClientService
+				.problemView(contestId, problemId, request, response);
+	}
 
 	/**
 	 * 创建提交.
@@ -162,14 +183,19 @@ public interface ContestsClientService {
 	@ApiOperation(value = "创建提交")
 	@RequestMapping(value="/{contestId}/createSubmission.action", method=RequestMethod.POST)
 	public @ResponseBody ResponseData createSubmissionAction(
-			@ApiParam(value = "试题的唯一标识符", name = "problemId")
-			@RequestParam(value = "problemId") long problemId,
-			@ApiParam(value = "编程语言的别名", name = "languageSlug")
-			@RequestParam(value = "languageSlug") String languageSlug,
-			@ApiParam(value = "代码", name = "code")
-			@RequestParam(value = "code") String code,
-			@ApiParam(value = "用于防止CSRF攻击的Token", name = "csrfToken")
-			@RequestParam(value = "csrfToken") String csrfToken,
-			@RequestParam(value="request") HttpServletRequest request, @PathVariable("contestId") String contestId);
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @RequestParam(value = "problemId") long problemId,
+            @ApiParam(value = "编程语言的别名", name = "languageSlug")
+            @RequestParam(value = "languageSlug") String languageSlug,
+            @ApiParam(value = "代码", name = "code")
+            @RequestParam(value = "code") String code,
+            @ApiParam(value = "用于防止CSRF攻击的Token", name = "csrfToken")
+            @RequestParam(value = "csrfToken") String csrfToken,
+            HttpServletRequest request, @PathVariable String contestId){
+		return this.contestsClientService
+				.createSubmissionAction(problemId, languageSlug, code, csrfToken, request, contestId);
+	}
 
+	@Autowired
+	ContestsClientService contestsClientService;
 }

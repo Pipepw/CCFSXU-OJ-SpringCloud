@@ -11,6 +11,7 @@
         <module>ccfsxu-oj-provider-8001</module>
         <module>ccfsxu-oj-eureka-7001</module>
         <module>ccfsxu-oj-api</module>
+        <module>ccfsxu-oj-consumer-80</module>
     </modules>
 
     <!--    打包方式，pom-->

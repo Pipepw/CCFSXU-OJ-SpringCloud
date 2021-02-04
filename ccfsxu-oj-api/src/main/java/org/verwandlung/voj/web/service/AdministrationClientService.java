@@ -56,7 +56,7 @@ import javax.servlet.http.HttpServletResponse;
  * 用于处理系统管理的请求.
  *
  */
-@FeignClient(value = "CCUSXU-OJ-DEPT")
+@FeignClient(value = "CCUSXU-OJ")
 @Api(tags = "用于处理系统管理的请求.")
 @RequestMapping(value="/administration")
 public interface AdministrationClientService {
@@ -69,7 +69,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "加载系统管理首页", notes = "先登陆管理员账号")
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public ResponseData indexView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 获取系统一段时间内的提交次数.
@@ -82,7 +82,7 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData getNumberOfSubmissionsAction(
 			@ApiParam(value = "时间间隔的天数", name = "period", example = "10")
 			@RequestParam(value="period") int period,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 加载用户列表页面.
@@ -99,7 +99,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="username", required=false, defaultValue="") String username,
 			@ApiParam(value = "页号", name="page", required=false, defaultValue="1")
 			@RequestParam(value="page", required=false, defaultValue="1") long pageNumber,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 	
 	/**
 	 * 删除选定的用户.
@@ -112,7 +112,7 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData deleteUsersAction(
 			@ApiParam(value = "用户ID的集合, 以逗号(, )分隔", name="users")
 			@RequestParam(value="users") String users,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 加载编辑用户信息的页面.
@@ -126,7 +126,7 @@ public interface AdministrationClientService {
 	public ResponseData editUserView(
 			@ApiParam(value = "用户的唯一标识符", name = "userId")
 			@PathVariable(value = "userId") long userId,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 编辑用户个人信息.
@@ -163,7 +163,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="socialLinks") String socialLinks,
 			@ApiParam(value="用户个人简介", name="aboutMe")
 			@RequestParam(value="aboutMe") String aboutMe,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 加载创建用户页面.
@@ -174,7 +174,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "加载创建用户页面")
 	@RequestMapping(value="/new-user", method=RequestMethod.GET)
 	public ResponseData newUserView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 创建新用户.
@@ -203,7 +203,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="userGroup") String userGroupSlug,
 			@ApiParam(value = "偏好语言的别名，从创建用户页面中获取信息", name="preferLanguage", example = "text/x-csrc", required = true)
 			@RequestParam(value="preferLanguage") String preferLanguageSlug,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 加载试题列表页面.
@@ -222,7 +222,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="problemTag", required=false, defaultValue="") String problemTagSlug,
 			@ApiParam(value="页号", name="page", required=false, defaultValue="1")
 			@RequestParam(value="page", required=false, defaultValue="1") long pageNumber,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 删除选定的试题.
@@ -235,7 +235,7 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData deleteProblemsAction(
 			@ApiParam(value="选定的问题", name="problems", required = true)
 			@RequestParam(value="problems") String problems,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 加载创建试题页面.
@@ -246,7 +246,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "加载创建试题页面")
 	@RequestMapping(value="/new-problem", method=RequestMethod.GET)
 	public ResponseData newProblemView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 处理用户创建试题的请求.
@@ -298,7 +298,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="isPublic") boolean isPublic,
 			@ApiParam(value="测试点是否精确匹配", name="isExactlyMatch")
 			@RequestParam(value="isExactlyMatch") boolean isExactlyMatch,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 处理用户导入试题的请求
@@ -311,7 +311,7 @@ public interface AdministrationClientService {
 	public ResponseData importProblemAction(
 			@ApiParam(value="导入的xml文件", name="problem_file")
 			@RequestParam(value="problem_file") MultipartFile file,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 加载编辑试题页面.
@@ -324,7 +324,7 @@ public interface AdministrationClientService {
 	@RequestMapping(value="/edit-problem/{problemId}", method=RequestMethod.GET)
 	public ResponseData editProblemsView(
 			@PathVariable(value = "problemId") long problemId,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 	
 	/**
 	 * 处理用户编辑试题的请求.
@@ -378,7 +378,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="isPublic") boolean isPublic,
 			@ApiParam(value="测试点是否精确匹配", name="isExactlyMatch")
 			@RequestParam(value="isExactlyMatch") boolean isExactlyMatch,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 加载试题分类页面.
@@ -389,7 +389,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "加载试题分类页面")
 	@RequestMapping(value="/problem-categories", method=RequestMethod.GET)
 	public ResponseData problemCategoriesView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 	
 	/**
 	 * 创建试题分类.
@@ -408,7 +408,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="problemCategoryName") String problemCategoryName,
 			@ApiParam(value="父级试题分类别名", name="parentProblemCategory")
 			@RequestParam(value="parentProblemCategory") String parentProblemCategorySlug,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 编辑试题分类.
@@ -430,7 +430,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="problemCategoryName") String problemCategoryName,
 			@ApiParam(value="父级试题分类的别名", name="parentProblemCategory")
 			@RequestParam(value="parentProblemCategory") String parentProblemCategorySlug,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 删除试题分类.
@@ -443,7 +443,7 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData deleteProblemCategoryAction(
 			@ApiParam(value="试题分类的唯一标识符集合", name="problemCategories")
 			@RequestParam(value="problemCategories") String problemCategories,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 加载提交列表页面.
@@ -463,7 +463,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="username", required=false, defaultValue="") String username,
 			@ApiParam(value="当前页面的页码", name="page", required=false, defaultValue="1")
 			@RequestParam(value="page", required=false, defaultValue="1") long pageNumber,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 	
 	/**
 	 * 删除选定的提交记录.
@@ -476,7 +476,7 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData deleteSubmissionsAction(
 			@ApiParam(value="提交记录ID的集合, 以逗号(, )分隔", name="submissions")
 			@RequestParam(value="submissions") String submissions,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 重新评测选定的提交记录.
@@ -488,7 +488,7 @@ public interface AdministrationClientService {
 	@RequestMapping(value="/restartSubmissions.action", method=RequestMethod.POST)
 	public @ResponseBody ResponseData restartSubmissionsAction(
 			@RequestParam(value="submissions") String submissions,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 查看提交记录.
@@ -501,7 +501,7 @@ public interface AdministrationClientService {
 	@RequestMapping(value="/edit-submission/{submissionId}", method=RequestMethod.GET)
 	public ResponseData editSubmissionView(
 			@PathVariable(value = "submissionId") long submissionId,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 加载竞赛列表页面.
@@ -516,7 +516,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="keyword", required=false, defaultValue="") String keyword,
 			@ApiParam(value="当前页面的页码", name="page", required=false, defaultValue="1")
 			@RequestParam(value="page", required=false, defaultValue="1") long pageNumber,
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 	/**
 	 * 删除选定的竞赛.
@@ -529,7 +529,7 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData deleteContestsAction(
 			@ApiParam(value="试题ID的集合, 以逗号(, )分隔", name="contests")
 			@RequestParam(value="contests") String contests,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 	/**
 	 * 加载创建竞赛页面.
@@ -540,7 +540,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "")
 	@RequestMapping(value="/new-contest", method=RequestMethod.GET)
 	public ModelAndView newContestView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 
 //	/**
 //	 * 处理用户创建竞赛的请求.
@@ -559,7 +559,7 @@ public interface AdministrationClientService {
 //			@RequestParam(value="description") String description,
 //			@RequestParam(value="ContestMode") String ContestMode,
 //			@RequestParam(value="ChooseProblem") String ChooseProblem,
-//			HttpServletRequest request) {
+//			@RequestParam(value="request") HttpServletRequest request) {
 //		Map<String, Object> result = contestService.createContest(ContestName,description,StartTime,EndTime,ContestMode,ChooseProblem);
 //		if ( (boolean) result.get("isSuccessful") ) {
 //			long problemId = (Long) result.get("problemId");
@@ -580,7 +580,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "加载常规选项页面")
 	@RequestMapping(value="/general-settings", method=RequestMethod.GET)
 	public ResponseData generalSettingsView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 	
 	/**
 	 * 更新网站常规选项.
@@ -614,7 +614,7 @@ public interface AdministrationClientService {
 			@RequestParam(value="googleAnalyticsCode") String googleAnalyticsCode,
 			@ApiParam(value="敏感词列表", name="offensiveWords")
 			@RequestParam(value="offensiveWords") String offensiveWords,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 	
 	/**
 	 * 加载编程语言设置页面.
@@ -625,7 +625,7 @@ public interface AdministrationClientService {
 	@ApiOperation(value = "加载编程语言设置页面")
 	@RequestMapping(value="/language-settings", method=RequestMethod.GET)
 	public ResponseData languageSettingsView(
-			HttpServletRequest request, HttpServletResponse response);
+			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
 	
 	/**
 	 * 更新网站编程语言选项.
@@ -638,6 +638,6 @@ public interface AdministrationClientService {
 	public @ResponseBody ResponseData updateLanguageSettingsAction(
 			@ApiParam(value="包含编程语言设置的数组", name="languages")
 			@RequestParam(value="languages") String languages,
-			HttpServletRequest request);
+			@RequestParam(value="request") HttpServletRequest request);
 
 }

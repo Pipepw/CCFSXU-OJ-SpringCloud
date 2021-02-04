@@ -37,13 +37,15 @@
  *                          HERE BE BUDDHA
  *
  */
-package org.verwandlung.voj.web.service;
+package org.verwandlung.voj.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import org.verwandlung.voj.web.service.ProblemsClientService;
 import org.verwandlung.voj.web.util.ResponseData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,10 +56,10 @@ import java.io.UnsupportedEncodingException;
  * 处理用户的查看试题/提交评测等请求.
  *
  */
-@FeignClient(value = "CCUSXU-OJ")
 @Api(tags = "处理用户的查看试题/提交评测等请求")
-@RequestMapping(value="/p")
-public interface ProblemsClientService {
+@RestController
+@RequestMapping(value="/consumer/p")
+public class ProblemsController_Consumer {
 	/**
 	 * 显示试题库中的全部试题.
 	 * @param startIndex - 试题的起始下标
@@ -69,16 +71,19 @@ public interface ProblemsClientService {
 	 * @throws UnsupportedEncodingException 
 	 */
 	@ApiOperation(value = "显示试题库中的全部试题")
-	@RequestMapping(value="", method=RequestMethod.GET)
+	@RequestMapping(value="", method= RequestMethod.GET)
 	public ResponseData problemsView(
-			@ApiParam(value="试题的起始下标", name="start")
-			@RequestParam(value="start", required=false, defaultValue="1") long startIndex,
-			@ApiParam(value="关键词", name="keyword")
-			@RequestParam(value="keyword", required = false) String keyword,
-			@ApiParam(value="试题分类的别名", name="category")
-			@RequestParam(value="category", required = false) String problemCategorySlug,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @ApiParam(value = "试题的起始下标", name = "start")
+            @RequestParam(value = "start", required = false, defaultValue = "1") long startIndex,
+            @ApiParam(value = "关键词", name = "keyword")
+            @RequestParam(value = "keyword", required = false) String keyword,
+            @ApiParam(value = "试题分类的别名", name = "category")
+            @RequestParam(value = "category", required = false) String problemCategorySlug,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.problemsClientService
+		.problemsView(startIndex, keyword, problemCategorySlug, request, response);
+	}
+
 	/**
 	 * 获取试题列表.
 	 * @param startIndex - 试题的起始下标
@@ -87,15 +92,19 @@ public interface ProblemsClientService {
 	 */
 	@ApiOperation(value = "获取试题列表")
 	@RequestMapping(value="/getProblems.action", method=RequestMethod.GET)
-	public @ResponseBody ResponseData getProblemsAction(
-			@ApiParam(value="试题的起始下标", name="startIndex")
-			@RequestParam(value="startIndex") long startIndex,
-			@ApiParam(value="关键词", name="keyword")
-			@RequestParam(value="keyword", required = false) String keyword,
-			@ApiParam(value="试题分类的别名", name="category")
-			@RequestParam(value="category", required = false) String problemCategorySlug,
-			@RequestParam(value="request") HttpServletRequest request);
-	
+	public @ResponseBody
+	ResponseData getProblemsAction(
+            @ApiParam(value = "试题的起始下标", name = "startIndex")
+            @RequestParam(value = "startIndex") long startIndex,
+            @ApiParam(value = "关键词", name = "keyword")
+            @RequestParam(value = "keyword", required = false) String keyword,
+            @ApiParam(value = "试题分类的别名", name = "category")
+            @RequestParam(value = "category", required = false) String problemCategorySlug,
+            HttpServletRequest request){
+		return this.problemsClientService
+				.getProblemsAction(startIndex, keyword, problemCategorySlug, request);
+	}
+
 	/**
 	 * 加载试题的详细信息.
 	 * @param problemId - 试题的唯一标识符
@@ -106,9 +115,12 @@ public interface ProblemsClientService {
 	@ApiOperation(value = "加载试题的详细信息")
 	@RequestMapping(value="/{problemId}", method=RequestMethod.GET)
 	public ResponseData problemView(
-			@PathVariable("problemId") long problemId,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @PathVariable("problemId") long problemId,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.problemsClientService
+				.problemView(problemId, request, response);
+	}
+
 	/**
 	 * 加载试题题解页面.
 	 * @param problemId - 试题的唯一标识符
@@ -119,10 +131,13 @@ public interface ProblemsClientService {
 	@ApiOperation(value = "加载试题题解页面")
 	@RequestMapping(value="/{problemId}/solution", method=RequestMethod.GET)
 	public ResponseData solutionView(
-			@ApiParam(value="试题的唯一标识符",name="problemId")
-			@PathVariable("problemId") long problemId,
-			@RequestParam(value="request") HttpServletRequest request, @RequestParam(value="response") HttpServletResponse response);
-	
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @PathVariable("problemId") long problemId,
+            HttpServletRequest request, HttpServletResponse response){
+		return this.problemsClientService
+				.solutionView(problemId, request, response);
+	}
+
 	/**
 	 * 创建提交.
 	 * @param problemId - 试题的唯一标识符
@@ -135,14 +150,19 @@ public interface ProblemsClientService {
 	@ApiOperation(value = "创建提交")
 	@RequestMapping(value="/createSubmission.action", method=RequestMethod.POST)
 	public @ResponseBody ResponseData createSubmissionAction(
-			@ApiParam(value="试题的唯一标识符", name="problemId")
-			@RequestParam(value="problemId") long problemId,
-			@ApiParam(value="编程语言的别名", name="languageSlug")
-			@RequestParam(value="languageSlug") String languageSlug,
-			@ApiParam(value="代码", name="code")
-			@RequestParam(value="code") String code,
-			@ApiParam(value="用于防止CSRF攻击的Token", name="csrfToken")
-			@RequestParam(value="csrfToken") String csrfToken,
-			@RequestParam(value="request") HttpServletRequest request);
+            @ApiParam(value = "试题的唯一标识符", name = "problemId")
+            @RequestParam(value = "problemId") long problemId,
+            @ApiParam(value = "编程语言的别名", name = "languageSlug")
+            @RequestParam(value = "languageSlug") String languageSlug,
+            @ApiParam(value = "代码", name = "code")
+            @RequestParam(value = "code") String code,
+            @ApiParam(value = "用于防止CSRF攻击的Token", name = "csrfToken")
+            @RequestParam(value = "csrfToken") String csrfToken,
+            HttpServletRequest request){
+		return this.problemsClientService
+				.createSubmissionAction(problemId, languageSlug, code, csrfToken, request);
+	}
 
+	@Autowired
+	ProblemsClientService problemsClientService;
 }
